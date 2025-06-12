@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>수면연구소 SOMNIA</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -19,72 +19,6 @@
       overflow: hidden;
       background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
       transition: background 1.5s ease;
-    }
-
-    /* 데스크톱 환경을 위한 컨테이너 최대 너비 설정 */
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* 반응형 디자인 */
-    @media (min-width: 768px) {
-      .btn-large-round {
-        width: 400px;
-        height: 400px;
-      }
-
-      .btn-small-flat {
-        width: 250px;
-        height: 60px;
-        font-size: 1.2rem;
-      }
-
-      .question-box {
-        max-width: 800px;
-        padding: 3rem;
-      }
-
-      .result-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .result-card {
-        max-width: 1000px;
-        margin: 3rem auto;
-      }
-
-      .history-container {
-        max-width: 1000px;
-      }
-
-      #historyChart {
-        height: 500px !important;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .logo {
-        width: 1000px;
-      }
-
-      .result-logo {
-        width: 1000px;
-      }
-
-      .nav-icon {
-        width: 100px;
-        height: 100px;
-      }
-
-      .bottom-nav {
-        max-width: 600px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 20px 20px 0 0;
-      }
     }
     
     .btn {
@@ -173,14 +107,12 @@
     }
 
     .section {
-      width: 100%;
+      width: 100vw;
       height: 100vh;
       display: none;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      position: relative;
-      overflow-x: hidden;
     }
     .section.active {
       display: flex;
@@ -1279,6 +1211,76 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  section {
+    transform: scale(0.8);
+    transform-origin: top center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: 60px;
+  }
+
+  .logo {
+    transform: scale(3.0);
+    max-width: 300%;
+    justify-content: center;
+  }
+
+  .bottom-nav {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .nav-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .nav-item {
+    padding: 8px 12px;
+  }
+
+  img {
+    max-width: 300%;
+    height: auto;
+  }
+
+  .result-box {
+    width: 100%;
+    margin: 10px auto;
+    padding: 15px;
+    margin-bottom: 70px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .score-box, .type-box {
+    width: 90%;
+    margin: 10px auto;
+    transform: none;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  #result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 70px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  #result > div {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
   </style>
